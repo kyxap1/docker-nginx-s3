@@ -35,4 +35,4 @@ WORKDIR /etc/nginx
 EXPOSE 80
 EXPOSE 443
 
-CMD ['nginx']
+CMD ['/usr/sbin/nginx']

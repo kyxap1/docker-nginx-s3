@@ -1,6 +1,16 @@
-FROM ubuntu:14.04.4
+# Main functionality:
+#   nginx module: ngx_aws_auth (https://github.com/anomalizer/ngx_aws_auth)
+#
+# Dockerfile origin:
+#   grahamgilbert/docker-nginx-s3 (https://github.com/grahamgilbert/docker-nginx-s3)
+#
+# Docker's origin backup:
+#   kyxap1/docker-nginx-s3 (https://github.com/kyxap1/docker-nginx-s3)
+#
 
-ENV NGINX_VERSION=1.9.12
+FROM ubuntu:trusty
+
+ENV NGINX_VERSION=${NGINX_VERSION:-1.11.3}
 
 RUN apt-get update && \
     apt-get -y install curl build-essential libpcre3 libpcre3-dev zlib1g-dev libssl-dev git && \
